@@ -214,30 +214,46 @@ Humanoid.prototype.greet = function () {return `${this.name} offers a greeting i
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
 
   Hero.prototype.debug = function (Villian) {
-    Villian.healthPoints = Villian.healthPoints - 5;
+    function attack(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+  } 
+    let hpLost = attack(0, 5);
+    Villian.healthPoints = Villian.healthPoints - hpLost;
     Villian.healthPoints <= 0 ? console.log(`${Villian.takeDamage()} ${this.name} uses ${this.weapons[1]}. ${Villian.name} has been defeated! Long live Freedom! ${Villian.destroy()}`) :
-      console.log(`${this.name} uses ${this.weapons[1]}. ${Villian.takeDamage()} ${Villian.name}loses 5 HP. ${Villian.name} only has ${Villian.healthPoints} HP left!`);
+      console.log(`${this.name} uses ${this.weapons[1]}. ${Villian.takeDamage()} ${Villian.name}loses ${hpLost} HP. ${Villian.name} only has ${Villian.healthPoints} HP left!`);
   };
 
   Hero.prototype.con = function (Villian) {
-    Villian.healthPoints = Villian.healthPoints - 2;
+    function attack(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+  } 
+    let hpLost = attack(0, 5);
+    Villian.healthPoints = Villian.healthPoints - hpLost;
     Villian.healthPoints <= 0 ? console.log(`${Villian.takeDamage()} ${this.name} uses ${this.weapons[0]}. ${Villian.name} has been defeated! Long live Freedom! ${Villian.destroy()}`) :
-      console.log(`${this.name} uses ${this.weapons[0]}. ${Villian.takeDamage()} ${Villian.name}loses 5 HP. ${Villian.name} only has ${Villian.healthPoints} HP left!`);
+      console.log(`${this.name} uses ${this.weapons[0]}. ${Villian.takeDamage()} ${Villian.name}loses ${hpLost} HP. ${Villian.name} only has ${Villian.healthPoints} HP left!`);
   };
 
   Villian.prototype.disappear = function (Hero) {
-    Hero.healthPoints = Hero.healthPoints - 5;
+    function attack(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+  } 
+    let hpLost = attack(0, 5);
+    Hero.healthPoints = Hero.healthPoints - hpLost;
     Hero.healthPoints <= 0 ? 
     console.log(`${Hero.takeDamage()} ${this.name} uses ${this.weapons[0]}. ${Hero.name} has been defeated! Chaos is all we speak now! ${Hero.destroy()}`) :
-    console.log(`${this.name} uses ${this.weapons[0]}. ${Hero.takeDamage()} ${Hero.name} loses 2 HP. ${Hero.name} only has ${Hero.healthPoints} HP left!`);
+    console.log(`${this.name} uses ${this.weapons[0]}. ${Hero.takeDamage()} ${Hero.name} loses ${hpLost} HP. ${Hero.name} only has ${Hero.healthPoints} HP left!`);
 
   };
 
   Villian.prototype.duplicate = function (Hero) {
-    Hero.healthPoints = Hero.healthPoints - 2;
+    function attack(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+  } // 
+    let hpLost = attack(0, 5);
+    Hero.healthPoints = Hero.healthPoints - hpLost;
       Hero.healthPoints <= 0 ? 
       console.log(`${Hero.takeDamage()} ${this.name} uses ${this.weapons[1]}. ${Hero.name} has been defeated! Chaos is all we speak now! ${Hero.destroy()}`) :
-      console.log(`${this.name} uses ${this.weapons[1]}. ${Hero.takeDamage()} ${Hero.name} loses 2 HP. ${Hero.name} only has ${Hero.healthPoints} HP left!`);
+      console.log(`${this.name} uses ${this.weapons[1]}. ${Hero.takeDamage()} ${Hero.name} loses ${hpLost} HP. ${Hero.name} only has ${Hero.healthPoints} HP left!`);
   };
 
 // dont change below - delete this comment when done
@@ -293,8 +309,15 @@ Humanoid.prototype.greet = function () {return `${this.name} offers a greeting i
   curly.disappear(lambdaWoman);
   curly.duplicate(lambdaWoman);
   lambdaWoman.con(curly);
-  lambdaWoman.con(curly);
-  lambdaWoman.debug(curly);
-  curly.duplicate(lambdaWoman);
+  // lambdaWoman.con(curly);
+  // lambdaWoman.debug(curly);
+  // curly.duplicate(lambdaWoman);
+  // lambdaWoman.con(curly);
+  // curly.disappear(lambdaWoman);
+  // curly.duplicate(lambdaWoman);
+  // lambdaWoman.con(curly);
+  // lambdaWoman.con(curly);
+  // lambdaWoman.debug(curly);
+  // curly.duplicate(lambdaWoman);
 
    
