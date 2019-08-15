@@ -13,7 +13,7 @@
 
 // code example for Window Binding
 
-// console.log(this);
+console.log(this);
 
 // Principle 2
 
@@ -53,6 +53,8 @@ const Employee = function(id, name, email, gender) {
 
 // Principle 4
 
+// code example for Explicit Binding
+
 const Intern = function(id, name, email, gender) {
     this.id = id;
     this.name = name;
@@ -65,4 +67,3 @@ const Intern = function(id, name, email, gender) {
 
 kennan.introduce();
 
-// code example for Explicit Binding
