@@ -63,7 +63,7 @@ const Intern = function(id, name, email, gender) {
   };
   
   Intern.prototype = Object.create(Employee.prototype);
-  const kennan = new Intern(2, 'Kennan', 'kdiben1@tinypic.com', 'M')
+  const kennan = new Intern(2, 'Kennan', 'kdiben1@tinypic.com', 'M');
 
-kennan.introduce();
+kennan.introduce.call(mitzi);
 

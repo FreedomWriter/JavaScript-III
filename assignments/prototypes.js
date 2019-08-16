@@ -190,7 +190,7 @@ Humanoid.prototype.greet = function () {return `${this.name} offers a greeting i
       return Math.floor(Math.random() * (max - min)) + min;
   } 
     let hpLost = attack(0, 5);
-    Hero.healthPoints = Hero.healthPoints - hpLost;
+      Hero.healthPoints = Hero.healthPoints - hpLost;
       Hero.healthPoints <= 0 ? 
       console.log(`${Hero.takeDamage()} ${this.name} uses ${this.weapons[1]}. ${Hero.name} has been defeated! Chaos is all we speak now! ${Hero.destroy()}`) :
       console.log(`${this.name} uses ${this.weapons[1]}. ${Hero.takeDamage()} ${Hero.name} loses ${hpLost} HP. ${Hero.name} only has ${Hero.healthPoints} HP left!`);
@@ -217,10 +217,10 @@ Humanoid.prototype.greet = function () {return `${this.name} offers a greeting i
     superPower: 'Coding'
   });
 
-  console.log(lambdaWoman);
-  console.log(lambdaWoman.greet()); 
-  console.log(lambdaWoman.takeDamage()); 
-  console.log(lambdaWoman.destroy()); 
+  // console.log(lambdaWoman);
+  // console.log(lambdaWoman.greet()); 
+  // console.log(lambdaWoman.takeDamage()); 
+  // console.log(lambdaWoman.destroy()); 
 
   const curly =  new Villian ({
     createdAt: new Date(),
@@ -241,17 +241,17 @@ Humanoid.prototype.greet = function () {return `${this.name} offers a greeting i
     superPower: 'Code Breaking'
   });
 
-  console.log(lambdaWoman);
-  console.log(curly);
-  console.log(lambdaWoman.greet()); 
-  console.log(curly.greet()); 
+  // console.log(lambdaWoman);
+  // console.log(curly);
+  // console.log(lambdaWoman.greet()); 
+  // console.log(curly.greet()); 
   curly.duplicate(lambdaWoman);
   lambdaWoman.con(curly);
   curly.disappear(lambdaWoman);
   curly.duplicate(lambdaWoman);
   lambdaWoman.con(curly);
-  // lambdaWoman.con(curly);
-  // lambdaWoman.debug(curly);
+  lambdaWoman.con(curly);
+  lambdaWoman.debug(curly);
   // curly.duplicate(lambdaWoman);
   // lambdaWoman.con(curly);
   // curly.disappear(lambdaWoman);
